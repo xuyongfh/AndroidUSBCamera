@@ -173,7 +173,7 @@ public final class USBMonitor {
 			if (DEBUG) XLogWrapper.i(TAG, "register:");
 			final Context context = mWeakContext.get();
 			if (context != null) {
-				if (Build.VERSION.SDK_INT >= 31) {
+				if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
 					// avoid acquiring intent data failed in receiver on Android12
 					// when using PendingIntent.FLAG_IMMUTABLE
 					// because it means Intent can't be modified anywhere -- jiangdg/20220929
@@ -186,8 +186,8 @@ public final class USBMonitor {
 				filter.addAction(ACTION_USB_DEVICE_ATTACHED);
 				filter.addAction(UsbManager.ACTION_USB_DEVICE_DETACHED);
 				context.registerReceiver(mUsbReceiver, filter);
-				if (Build.VERSION.SDK_INT >=  Build.VERSION_CODES.O) {
-					context.registerReceiver(mUsbReceiver, filter, 2);
+				if (Build.VERSION.SDK_INT >=  Build.VERSION_CODES.TIRAMISU) {
+					context.registerReceiver(mUsbReceiver, filter, Context.RECEIVER_NOT_EXPORTED);
 				} else {
 					context.registerReceiver(mUsbReceiver, filter);
 				}
