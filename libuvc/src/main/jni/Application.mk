@@ -25,6 +25,7 @@
 # This is just for mips, if you really needs MSA, un-comment and build with GCC.
 # Note: Supporting GCC on NDK is already deprecated and GCC will be removed from NDK soon.
 #NDK_TOOLCHAIN_VERSION := 4.9
+# ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android.mk NDK_APPLICATION_MK=./Application.mk
 
 APP_PLATFORM := android-14
 #APP_ABI :=arm64-v8a armeabi-v7a
