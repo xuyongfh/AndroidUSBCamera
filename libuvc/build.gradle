@@ -1,28 +1,13 @@
-apply plugin: 'com.android.library'
-apply plugin: 'maven-publish'
+plugins {
+	id 'com.android.library'
+	id 'maven-publish'
+}
 group='com.github.jasonlau233'
 import org.apache.tools.ant.taskdefs.condition.Os
 
 android {
 	compileSdkVersion rootProject.ext.versionCompiler
 	buildToolsVersion rootProject.ext.versionBuildTool
-
-	afterEvaluate {
-		publishing {
-			publications {
-				// Creates a Maven publication called "release".
-				release(MavenPublication) {
-					// Applies the component for the release build variant.
-					from components.release
-
-					// You can then customize attributes of the publication as shown below.
-					groupId = 'com.github.jasonlau233'
-					artifactId = 'libuvc'
-					version = '0.0.4'
-				}
-			}
-		}
-	}
 
 	compileOptions {
 		sourceCompatibility rootProject.ext.javaSourceCompatibility
@@ -49,6 +34,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+}
+
+afterEvaluate {
+	publishing {
+		publications {
+			// Creates a Maven publication called "release".
+			release(MavenPublication) {
+				// Applies the component for the release build variant.
+				from components.release
+
+				// You can then customize attributes of the publication as shown below.
+				groupId = 'com.github.jasonlau233'
+				artifactId = 'libuvc'
+				version = '0.0.5'
+			}
+		}
+	}
 }
 
 //tasks.withType(JavaCompile) {
