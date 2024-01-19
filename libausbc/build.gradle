@@ -44,7 +44,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.github.jasonlau233'
                 artifactId = 'libausbc'
-                version = '0.0.5'
+                version = rootProject.ext.versionNameString
             }
         }
     }

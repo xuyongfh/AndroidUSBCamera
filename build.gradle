@@ -1,4 +1,5 @@
 // Top-level build file where you can add configuration options libuvccommon to all sub-projects/modules.
+apply plugin: 'maven-publish'
 buildscript {
     repositories {
         google()
@@ -29,7 +30,7 @@ ext {
     versionTarget = 27
     minSdkVersion = 19
     versionCode = 126
-    versionNameString = '3.3.3'
+    versionNameString = '3.3.4'
     javaSourceCompatibility = JavaVersion.VERSION_1_8
     javaTargetCompatibility = JavaVersion.VERSION_1_8
     ndkVersion = '21.0.6113669'
