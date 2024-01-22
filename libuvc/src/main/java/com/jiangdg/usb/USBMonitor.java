@@ -191,7 +191,7 @@ public final class USBMonitor {
 				filter.addAction(UsbManager.ACTION_USB_DEVICE_DETACHED);
 				context.registerReceiver(mUsbReceiver, filter);
 				if (Build.VERSION.SDK_INT >=  33) {
-					context.registerReceiver(mUsbReceiver, filter, 0x04);
+					context.registerReceiver(mUsbReceiver, filter, 2);
 				} else {
 					context.registerReceiver(mUsbReceiver, filter);
 				}
