@@ -189,8 +189,7 @@ public final class USBMonitor {
 				// ACTION_USB_DEVICE_ATTACHED never comes on some devices so it should not be added here
 				filter.addAction(ACTION_USB_DEVICE_ATTACHED);
 				filter.addAction(UsbManager.ACTION_USB_DEVICE_DETACHED);
-				context.registerReceiver(mUsbReceiver, filter);
-				if (Build.VERSION.SDK_INT >=  33) {
+				if (Build.VERSION.SDK_INT >=  31) {
 					context.registerReceiver(mUsbReceiver, filter, 2);
 				} else {
 					context.registerReceiver(mUsbReceiver, filter);
