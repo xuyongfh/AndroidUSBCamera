@@ -6,7 +6,7 @@ import android.graphics.SurfaceTexture
 import android.hardware.usb.UsbDevice
 import android.os.*
 import android.view.Surface
-import com.jiangdg.ausbc.callback.*
+import com.jiangdg.ausbc.callback.* 
 import com.jiangdg.ausbc.camera.bean.CameraRequest
 import com.jiangdg.ausbc.camera.bean.PreviewSize
 import com.jiangdg.ausbc.encode.AACEncodeProcessor
